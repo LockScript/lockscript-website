@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import Footer from "@/components/ui/footer";
 
 const inter = Poppins({ subsets: ["latin"], weight: "400" });
 

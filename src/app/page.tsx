@@ -4,6 +4,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
+import Footer from "@/components/ui/footer";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import Pricing from "@/components/ui/pricing";
@@ -104,6 +105,8 @@ export default function Home() {
       <Workflow />
       <Pricing />
       <FeatureSection />
+      
+      <Footer />
     </div>
   );
 }

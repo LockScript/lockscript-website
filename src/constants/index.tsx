@@ -55,30 +55,31 @@ export const pricingOptions = [
     title: "Free",
     price: "$0",
     features: [
-      "Private board sharing",
+      "LockScript Vault",
+      "LockScript Mail",
       "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
+      "1 Gb Mail Storage",
     ],
   },
   {
     title: "Pro",
     price: "$10",
     features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
+      "LockScript Automate",
+      "LockScript Spectra",
+      "LockScript Vault",
+      "LockScript Mail",
+      "20 Gb Storage",
+      "Priority Support"
     ],
   },
   {
     title: "Enterprise",
     price: "$200",
     features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
+      "All Pro Features for up to 20 Members",
+      "Fastest Support",
+      "Security Audits for your Enterprise"
     ],
   },
 ];
@@ -105,3 +106,27 @@ export const checklistItems = [
       "LockScript UI offers an intuitive and straightforward interface, ensuring seamless privacy and security management.",
   },
 ];
+
+export const resourcesLinks = [
+    { href: "#", text: "Getting Started" },
+    { href: "#", text: "Documentation" },
+    { href: "#", text: "Tutorials" },
+    { href: "#", text: "API Reference" },
+    { href: "#", text: "Community Forums" },
+  ];
+  
+  export const platformLinks = [
+    { href: "#", text: "Features" },
+    { href: "#", text: "Supported Devices" },
+    { href: "#", text: "System Requirements" },
+    { href: "#", text: "Downloads" },
+    { href: "#", text: "Release Notes" },
+  ];
+  
+  export const communityLinks = [
+    { href: "#", text: "Events" },
+    { href: "#", text: "Meetups" },
+    { href: "#", text: "Conferences" },
+    { href: "#", text: "Hackathons" },
+    { href: "#", text: "Jobs" },
+  ];
