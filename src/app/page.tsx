@@ -83,7 +83,7 @@ export default function Home() {
         <div className="lg:text-4xl md:text-3xl text-2xl mx-auto font-normal text-white dark:text-neutral-400">
           At LockScript we believe that
           <FlipWords words={words} /> 
-          is a human right
+          is a human right.
         </div>
       </div>
       
