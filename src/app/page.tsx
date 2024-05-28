@@ -1,3 +1,4 @@
+import CTASection from "@/components/ui/cta";
 import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
 import Footer from "@/components/ui/footer";
@@ -78,6 +79,8 @@ export default function Home() {
           assets and business operations.
         </p>
       </WavyBackground>
+
+      <CTASection />
 
       <div className="flex justify-center items-center px-4">
         <div className="lg:text-4xl md:text-3xl text-2xl mx-auto font-normal text-white dark:text-neutral-400">
