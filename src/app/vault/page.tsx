@@ -85,8 +85,8 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
 
-      <p className="text-white text-center mb-[20rem]">
-        Unlock the future of digital security with LockScript Vault.
+      <p className="text-white text-xl lg:text-2xl text-center mb-[20rem] lg:w-[45rem]">
+        Unlock the future of digital security with <span className="bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">LockScript Vault</span>.
         Effortlessly manage all your accounts with a single, secure tool,
         ensuring your datas safety while simplifying your digital life.
       </p>
