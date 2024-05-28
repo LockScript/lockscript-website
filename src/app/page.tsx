@@ -1,23 +1,8 @@
-import { BackgroundGradient } from "@/components/ui/background-gradient";
-import { CardStack, Highlight } from "@/components/ui/card-stack";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
 import Footer from "@/components/ui/footer";
-import { HeroParallax } from "@/components/ui/hero-parallax";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import Pricing from "@/components/ui/pricing";
-import Section from "@/components/ui/section";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import {
-  TextRevealCard,
-  TextRevealCardDescription,
-  TextRevealCardTitle,
-} from "@/components/ui/text-reveal-card";
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { WobbleCard } from "@/components/ui/wobble-card";
 import Workflow from "@/components/ui/workflow";
 import Image from "next/image";
 
@@ -83,7 +68,7 @@ export default function Home() {
   return (
     <div className="bg-black">
       <WavyBackground
-        className="max-w-4xl mx-auto text-4xl lg:text-7xl font-bold text-white"
+        className="max-w-4xl mx-auto text-3xl p-2 lg:text-7xl font-bold text-white"
         speed="fast"
       >
         Empower your security with{" "}
@@ -95,7 +80,7 @@ export default function Home() {
       </WavyBackground>
 
       <div className="flex justify-center items-center px-4">
-        <div className="text-4xl mx-auto font-normal text-white dark:text-neutral-400">
+        <div className="lg:text-4xl md:text-3xl text-2xl mx-auto font-normal text-white dark:text-neutral-400">
           At LockScript we believe that
           <FlipWords words={words} /> 
           is a human right
@@ -105,7 +90,6 @@ export default function Home() {
       <Workflow />
       <Pricing />
       <FeatureSection />
-      
       <Footer />
     </div>
   );
