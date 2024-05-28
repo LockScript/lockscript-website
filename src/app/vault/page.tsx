@@ -5,52 +5,52 @@ import { Separator } from "@/components/ui/separator";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Database, Layout, Lock, RefreshCcw, Shield, Zap } from "lucide-react";
 
-export const projects = [
-  {
-    icon: Lock,
-    title: "Full Encryption",
-    description:
-      "Our password manager employs full encryption, guaranteeing the highest level of data security.",
-    link: "",
-  },
-  {
-    icon: Zap,
-    title: "Fast Support",
-    description:
-      "Experiencing any issues? Reach out to our lightning-fast support team for immediate assistance.",
-    link: "",
-  },
-  {
-    icon: Database,
-    title: "Variety of Data Types",
-    description:
-      "LockScript has support for different types of credentials, such as secure notes, credit cards, pins, and just plain old passwords.",
-    link: "",
-  },
-  {
-    icon: Layout,
-    title: "Sleek UI",
-    description:
-      "Manage your passwords in style. Our solution provides a sleek and intuitive user interface to ensure that managing your security is simple, but effective.",
-    link: "",
-  },
-  {
-    icon: Shield,
-    title: "Weekly Security Audits",
-    description:
-      "At LockScript, we conduct weekly security audits to address and resolve any identified security concerns. Additionally, we proactively search for potential new issues to ensure our systems remain robust and secure.",
-    link: "",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Cross-Platform Sync",
-    description:
-      "Access your passwords seamlessly across all your devices. LockScript ensures that your data is synchronized and accessible, no matter where you are.",
-    link: "",
-  },
-];
-
-export default function Home() {
+export function Home() {
+  const projects = [
+    {
+      icon: Lock,
+      title: "Full Encryption",
+      description:
+        "Our password manager employs full encryption, guaranteeing the highest level of data security.",
+      link: "",
+    },
+    {
+      icon: Zap,
+      title: "Fast Support",
+      description:
+        "Experiencing any issues? Reach out to our lightning-fast support team for immediate assistance.",
+      link: "",
+    },
+    {
+      icon: Database,
+      title: "Variety of Data Types",
+      description:
+        "LockScript has support for different types of credentials, such as secure notes, credit cards, pins, and just plain old passwords.",
+      link: "",
+    },
+    {
+      icon: Layout,
+      title: "Sleek UI",
+      description:
+        "Manage your passwords in style. Our solution provides a sleek and intuitive user interface to ensure that managing your security is simple, but effective.",
+      link: "",
+    },
+    {
+      icon: Shield,
+      title: "Weekly Security Audits",
+      description:
+        "At LockScript, we conduct weekly security audits to address and resolve any identified security concerns. Additionally, we proactively search for potential new issues to ensure our systems remain robust and secure.",
+      link: "",
+    },
+    {
+      icon: RefreshCcw,
+      title: "Cross-Platform Sync",
+      description:
+        "Access your passwords seamlessly across all your devices. LockScript ensures that your data is synchronized and accessible, no matter where you are.",
+      link: "",
+    },
+  ];
+  
   const words = [
     "privacy",
     "anonymity",
@@ -86,8 +86,11 @@ export default function Home() {
       </div>
 
       <p className="text-white text-xl lg:text-2xl text-center mb-[20rem] lg:w-[45rem]">
-        Unlock the future of digital security with <span className="bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">LockScript Vault</span>.
-        Effortlessly manage all your accounts with a single, secure tool,
+        Unlock the future of digital security with{" "}
+        <span className="bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          LockScript Vault
+        </span>
+        . Effortlessly manage all your accounts with a single, secure tool,
         ensuring your datas safety while simplifying your digital life.
       </p>
 
