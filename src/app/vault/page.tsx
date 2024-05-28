@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Database, Layout, Lock, RefreshCcw, Shield, Zap } from "lucide-react";
 
-export function Home() {
+export default function Home() {
   const projects = [
     {
       icon: Lock,
@@ -50,7 +50,7 @@ export function Home() {
       link: "",
     },
   ];
-  
+
   const words = [
     "privacy",
     "anonymity",
