@@ -4,6 +4,7 @@ import "./globals.css";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import Footer from "@/components/ui/footer";
+import { Info } from "lucide-react";
 
 const inter = Poppins({ subsets: ["latin"], weight: "400" });
 
@@ -21,18 +22,18 @@ export default function RootLayout({
     {
       name: "Home",
       link: "/",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconHome className="h-4 w-4 text-white" />,
     },
     {
       name: "About",
       link: "/about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <Info className="h-4 w-4 text-white" />,
     },
     {
       name: "Contact",
       link: "/contact",
       icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+        <IconMessage className="h-4 w-4 text-white" />
       ),
     },
   ];

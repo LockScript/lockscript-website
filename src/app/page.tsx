@@ -1,3 +1,4 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import CTASection from "@/components/ui/cta";
 import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -5,7 +6,16 @@ import Footer from "@/components/ui/footer";
 import Pricing from "@/components/ui/pricing";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Workflow from "@/components/ui/workflow";
+import { Terminal } from "lucide-react";
 import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Home() {
   const words = [
@@ -85,14 +95,15 @@ export default function Home() {
       <div className="flex justify-center items-center px-4">
         <div className="lg:text-4xl md:text-3xl text-2xl mx-auto font-normal text-white dark:text-neutral-400">
           At LockScript we believe that
-          <FlipWords words={words} /> 
+          <FlipWords words={words} />
           is a human right.
         </div>
       </div>
-      
+
       <Workflow />
       <Pricing />
       <FeatureSection />
+
       <Footer />
     </div>
   );
