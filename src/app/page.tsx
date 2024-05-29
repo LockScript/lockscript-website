@@ -6,7 +6,7 @@ import Footer from "@/components/ui/footer";
 import Pricing from "@/components/ui/pricing";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Workflow from "@/components/ui/workflow";
-import { Terminal } from "lucide-react";
+import { Terminal, Vault } from "lucide-react";
 import Image from "next/image";
 import {
   Card,
@@ -103,7 +103,7 @@ export default function Home() {
       <Workflow />
       <Pricing />
       <FeatureSection />
-
+      
       <Footer />
     </div>
   );
