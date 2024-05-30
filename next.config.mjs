@@ -2,7 +2,10 @@
 const nextConfig = {
     images: {
         domains: [
-            'aceternity.com'
+            'aceternity.com',
+            'images.unsplash.com',
+            'cdn.cvs0.xyz',
+            '5skn.xyz'
         ]
     }
 };

@@ -26,7 +26,7 @@ export default function RootLayout({
     },
     {
       name: "About",
-      link: "/about",
+      link: "/about-us",
       icon: <Info className="h-4 w-4 text-white" />,
     },
     {
