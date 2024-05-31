@@ -3,7 +3,6 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Socials } from "@/components/ui/socials";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { IconCurrencyDollarCanadian } from "@tabler/icons-react";
 
 const people = [
   {
@@ -47,7 +46,7 @@ const AboutUsPage = () => {
         <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
       <TracingBeam>
-        <div className="text-center max-w-4xl w-full mt-[25rem]">
+        <div className="text-center max-w-4xl w-full mt-10">
           <h1 className="font-extrabold text-5xl mb-2 bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text p-2 rounded">
             Meet The Developers
           </h1>
@@ -56,7 +55,7 @@ const AboutUsPage = () => {
           <AnimatedTooltip items={people} />
         </div>
 
-        <div className="flex flex-col items-center space-y-5 mb-[20rem]">
+        <div className="flex flex-row justify-center items-center mb-[2rem] gap-5">
           <a href="https://cvs0.xyz">
             <button className="p-[3px] relative">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
@@ -74,10 +73,13 @@ const AboutUsPage = () => {
               </div>
             </button>
           </a>
+        </div>
 
+        <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mb-[20rem]">
           <Socials
             username="cvs0"
             github="cvs0"
+            x="cvs0_"
             discord="1147380185893716068"
           />
 

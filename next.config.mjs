@@ -5,7 +5,8 @@ const nextConfig = {
             'aceternity.com',
             'images.unsplash.com',
             'cdn.cvs0.xyz',
-            '5skn.xyz'
+            '5skn.xyz',
+            'img.clerk.com'
         ]
     }
 };

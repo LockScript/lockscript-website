@@ -1,4 +1,5 @@
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+"use client";
+
 import CTASection from "@/components/ui/cta";
 import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -6,16 +7,8 @@ import Footer from "@/components/ui/footer";
 import Pricing from "@/components/ui/pricing";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Workflow from "@/components/ui/workflow";
-import { Terminal, Vault } from "lucide-react";
+import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 export default function Home() {
   const words = [
@@ -103,7 +96,7 @@ export default function Home() {
       <Workflow />
       <Pricing />
       <FeatureSection />
-      
+
       <Footer />
     </div>
   );

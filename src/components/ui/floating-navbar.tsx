@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -8,6 +8,9 @@ import {
 } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { RedirectToSignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { currentUser, getAuth, redirectToSignIn } from "@clerk/nextjs/server";
+import { useRouter } from "next/navigation";
 
 export const FloatingNav = ({
   navItems,
@@ -20,26 +23,10 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
+  const router = useRouter();
   const { scrollYProgress } = useScroll();
 
-  const [visible, setVisible] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(true);
-        }
-      }
-    }
-  });
+  const [visible, setVisible] = useState(true);
 
   return (
     <AnimatePresence mode="wait">
@@ -73,10 +60,19 @@ export const FloatingNav = ({
           </Link>
         ))}
 
-        <button className="border text-sm font-medium relative border-white/[0.2] text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+
+        <SignedOut>
+          <button
+            className="border text-sm font-medium relative border-white/[0.2] text-white px-4 py-2 rounded-full"
+            onClick={() => router.push("/sign-in")}
+          >
+            <span>Login</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+        </SignedOut>
       </motion.div>
     </AnimatePresence>
   );
