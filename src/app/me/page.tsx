@@ -34,6 +34,7 @@ type User = {
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Skeleton } from "@/components/ui/skeleton";
+import { RedirectToSignIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import { useQuery } from "react-query";
 
@@ -50,6 +51,10 @@ const Page = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+      
       <BackgroundBeams />
       <CardContainer className="inter-var mt-10">
         <BackgroundBeams />
