@@ -1,6 +1,6 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { IconHome, IconMessage } from "@tabler/icons-react";
-import { Info } from "lucide-react";
+import { Info, UserIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -11,7 +11,8 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-
+import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryProvider } from "@/providers/QueryClient";
 const inter = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
@@ -41,17 +42,24 @@ export default function RootLayout({
       link: "/contact",
       icon: <IconMessage className="h-4 w-4 text-white" />,
     },
+    {
+      name: "User",
+      link: "/me",
+      icon: <UserIcon className="h-4 w-4 text-white" />,
+    },
   ];
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <div className="relative w-full">
-            <FloatingNav navItems={navItems} />
-          </div>
-          <main>{children}</main>
-        </body>
-      </html>
-    </ClerkProvider>
+    <QueryProvider>
+      <ClerkProvider>
+        <html lang="en">
+          <body className={inter.className}>
+            <div className="relative w-full">
+              <FloatingNav navItems={navItems} />
+            </div>
+            <main>{children}</main>
+          </body>
+        </html>
+      </ClerkProvider>
+    </QueryProvider>
   );
 }

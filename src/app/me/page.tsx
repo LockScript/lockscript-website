@@ -31,28 +31,22 @@ type User = {
   web3Wallets: Array<any>; // replace 'any' with the actual type if known
 };
 
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { currentUser } from "@clerk/nextjs/server";
-import { Link } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+
+const fetchUser = async () => {
+  const res = await fetch("/api/user");
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 
 const Page = () => {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    fetch("/api/user")
-      .then((response) => response.text())
-      .then((data) => {
-        const userData = JSON.parse(data);
-        setUser(userData);
-        console.log(userData);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+  const { data: user, isLoading, isError } = useQuery<User>("user", fetchUser);
 
   return (
     <div className="bg-black min-h-screen">
@@ -64,30 +58,43 @@ const Page = () => {
             translateZ="50"
             className="text-2xl font-extrabold text-white"
           >
-            <span className="text-emerald-500">$</span> {user?.username}
+            <span className="text-emerald-500">$</span>{" "}
+            {isLoading ? (
+              <Skeleton className="h-4 w-[200px] inline-block" />
+            ) : (
+              user?.username
+            )}
           </CardItem>
           <CardItem
-            as="p"
             translateZ="60"
             className="text-sm max-w-sm mt-2 text-neutral-300"
           >
-            {user?.id}
+            {isLoading ? <Skeleton className="h-4 w-[250px]" /> : user?.id}
           </CardItem>
-        <CardItem
-            as="p"
+          <CardItem
             translateZ="60"
             className=" text-sm max-w-sm mt-2 text-neutral-300"
-        >
-            {user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}
-        </CardItem>
+          >
+            {isLoading ? (
+              <Skeleton className="h-4 w-[250px]" />
+            ) : user?.createdAt ? (
+              new Date(user.createdAt).toLocaleDateString()
+            ) : (
+              "N/A"
+            )}
+          </CardItem>
           <CardItem translateZ="100" className="w-full mt-4">
-            <Image
-              src={user?.imageUrl || ""}
-              height="1000"
-              width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
+            {isLoading ? (
+              <Skeleton className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl" />
+            ) : (
+              <Image
+                src={user?.imageUrl || ""}
+                height="1000"
+                width="1000"
+                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                alt="thumbnail"
+              />
+            )}
           </CardItem>
           <div className="flex justify-between items-center mt-20">
             <CardItem
