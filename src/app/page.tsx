@@ -5,6 +5,7 @@ import FeatureSection from "@/components/ui/features";
 import { FlipWords } from "@/components/ui/flip-words";
 import Footer from "@/components/ui/footer";
 import Pricing from "@/components/ui/pricing";
+import ProductsSection from "@/components/ui/products-section";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Workflow from "@/components/ui/workflow";
 import { SignedIn } from "@clerk/nextjs";
@@ -96,6 +97,7 @@ export default function Home() {
       <Workflow />
       <Pricing />
       <FeatureSection />
+      <ProductsSection />
 
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-import { IconDashboard } from "@tabler/icons-react";
+import { IconDashboard, IconUserOff } from "@tabler/icons-react";
 import {
   BotMessageSquare,
   Fingerprint,
@@ -9,7 +9,12 @@ import {
   Key,
   Lock,
   Glasses,
+  Vault,
+  VenetianMask,
+  Settings,
+  Shield,
 } from "lucide-react";
+import { FaMask } from "react-icons/fa";
 
 export const features = [
   {
@@ -48,6 +53,37 @@ export const features = [
     description:
       "Within LockScript, our team comprises of seasoned professionals with extensive expertise in both security and software development.",
   },
+];
+
+export const products = [
+  {
+    icon: <Vault />,
+    text: "LockScript Vault",
+    description:
+      "LockScript Vault is a secure password manager, employing robust encryption with advanced algorithms to ensure the utmost security of your data.",
+    href: "/vault",
+  },
+  {
+    icon: <VenetianMask />,
+    text: "LockScript Spectra",
+    description:
+      "LockScript Spectra is an OSINT service, providing comprehensive data gathering and removal across various platforms and devices for maximum digital safety.",
+    href: "/spectra",
+  },
+  {
+    icon: <Settings />,
+    text: "LockScript Automate",
+    description:
+      "LockScript Automate is a task automation tool, allowing you to automate tasks such as sending Slack messages, managing Google Drive files, and more with ease.",
+    href: "/automate"
+  },
+  {
+    icon: <Shield />,
+    text: "LockScript VPN",
+    description:
+      "LockScript VPN is part of our comprehensive suite of security solutions, providing a secure and encrypted connection for your online activities.",
+    href: "/vpn"
+  }
 ];
 
 export const pricingOptions = [
