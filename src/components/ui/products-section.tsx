@@ -3,9 +3,9 @@ import { Separator } from "./separator";
 
 const ProductsSection = () => {
   return (
-    <div className="relative mt-12 min-h-[600px] bg-black py-8 px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-[600px] bg-black py-8 px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl mt-8 lg:mt-16 tracking-wide text-white font-extrabold">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide text-white font-extrabold">
           <span className="bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">
             Products
           </span>
@@ -13,10 +13,7 @@ const ProductsSection = () => {
       </div>
       <div className="flex flex-wrap justify-center mt-8 lg:mt-16 gap-4 sm:gap-6">
         {products.map((product, index) => (
-          <div
-            key={index}
-            className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4"
-          >
+          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
             <a
               href={product.href}
               className="block bg-neutral-800 hover:bg-neutral-900 rounded-xl p-4 transition duration-300 ease-in-out"
