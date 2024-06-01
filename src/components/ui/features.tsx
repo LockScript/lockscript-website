@@ -28,6 +28,8 @@ const FeatureSection = () => {
           </div>
         ))}
       </div>
+
+      <Separator className="bg-gray-800 mt-12 sm:mt-16" />
     </div>
   );
 };
