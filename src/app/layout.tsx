@@ -42,6 +42,7 @@ export default function RootLayout({
       name: "User",
       link: "/me",
       icon: <UserIcon className="h-4 w-4 text-white" />,
+      authRequired: true,
     },
   ];
   return (

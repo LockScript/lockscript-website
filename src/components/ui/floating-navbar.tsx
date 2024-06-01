@@ -8,7 +8,12 @@ import {
 } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-import { RedirectToSignIn, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import {
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import { currentUser, getAuth, redirectToSignIn } from "@clerk/nextjs/server";
 import { useRouter } from "next/navigation";
 
@@ -20,6 +25,7 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: JSX.Element;
+    authRequired?: boolean;
   }[];
   className?: string;
 }) => {
@@ -47,18 +53,38 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
+        {navItems.map((navItem: any, idx: number) => {
+          if (navItem.authRequired) {
+            return (
+              <SignedIn key={`navItem-${idx}`}>
+                <Link
+                  href={navItem.link}
+                  className={cn(
+                    "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+                  )}
+                >
+                  <span className="block sm:hidden">{navItem.icon}</span>
+                  <span className="hidden sm:block text-sm">
+                    {navItem.name}
+                  </span>
+                </Link>
+              </SignedIn>
+            );
+          } else {
+            return (
+              <Link
+                key={`navItem-${idx}`}
+                href={navItem.link}
+                className={cn(
+                  "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+                )}
+              >
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className="hidden sm:block text-sm">{navItem.name}</span>
+              </Link>
+            );
+          }
+        })}
 
         <SignedIn>
           <UserButton />
