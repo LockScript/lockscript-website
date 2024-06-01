@@ -3,7 +3,7 @@ import { Separator } from "./separator";
 
 const FeatureSection = () => {
   return (
-    <div className="relative mt-20 min-h-[800px] bg-black">
+    <div className="relative mt-20 bg-black">
       <div className="text-center">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide text-white font-extrabold">
           <span className="bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">
@@ -28,8 +28,6 @@ const FeatureSection = () => {
           </div>
         ))}
       </div>
-
-      <Separator className="bg-gray-800" />
     </div>
   );
 };
