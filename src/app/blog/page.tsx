@@ -1,3 +1,4 @@
+import ShareButtons from "@/components/ui/share-buttons";
 import {
   Tooltip,
   TooltipContent,
@@ -163,20 +164,9 @@ const Page = () => {
             ))}
           </ul>
         </div>
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Share this article</h2>
-          <div className="flex space-x-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-              Facebook
-            </button>
-            <button className="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded">
-              Twitter
-            </button>
-            <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
-              Pinterest
-            </button>
-          </div>
-        </div>
+        
+        <ShareButtons />
+
         <div className="mt-8">
           <h2 className="text-2xl font-bold mb-4">Comments</h2>
           <div className="bg-neutral-900 p-4 rounded-lg">

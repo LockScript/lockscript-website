@@ -85,7 +85,7 @@ export const FloatingNav = ({
             );
           }
         })}
-ya
+        
         <SignedIn>
           <UserButton />
         </SignedIn>
