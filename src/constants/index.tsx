@@ -81,7 +81,7 @@ export const products = [
     icon: <Shield />,
     text: "LockScript VPN",
     description:
-      "LockScript VPN is part of our comprehensive suite of security solutions, providing a secure and encrypted connection for your online activities.",
+      "LockScript VPN is part of our comprehensive suite of security solutions, providing a secure and encrypted connection for your online activities. The product is upcoming and will be released soon.",
     href: "/vpn"
   }
 ];
