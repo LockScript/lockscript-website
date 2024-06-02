@@ -1,40 +1,10 @@
 "use client";
 
-type User = {
-  id: string;
-  passwordEnabled: boolean;
-  totpEnabled: boolean;
-  backupCodeEnabled: boolean;
-  twoFactorEnabled: boolean;
-  banned: boolean;
-  createOrganizationEnabled: boolean;
-  createdAt: number;
-  emailAddresses: Array<any>; // replace 'any' with the actual type if known
-  externalAccounts: Array<any>; // replace 'any' with the actual type if known
-  externalId: string | null;
-  firstName: string;
-  hasImage: boolean;
-  imageUrl: string;
-  lastActiveAt: number;
-  lastName: string;
-  lastSignInAt: number;
-  phoneNumbers: Array<any>; // replace 'any' with the actual type if known
-  primaryEmailAddressId: string;
-  primaryPhoneNumberId: string | null;
-  primaryWeb3WalletId: string | null;
-  privateMetadata: any; // replace 'any' with the actual type if known
-  publicMetadata: any; // replace 'any' with the actual type if known
-  samlAccounts: Array<any>; // replace 'any' with the actual type if known
-  unsafeMetadata: any; // replace 'any' with the actual type if known
-  updatedAt: number;
-  username: string | null;
-  web3Wallets: Array<any>; // replace 'any' with the actual type if known
-};
-
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Skeleton } from "@/components/ui/skeleton";
 import { RedirectToSignIn, SignedOut } from "@clerk/nextjs";
+import { User } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { useQuery } from "react-query";
 
