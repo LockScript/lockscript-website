@@ -67,7 +67,7 @@ const Page: FC<PageProps> = async ({ params }: PageProps) => {
         <img
           src={doc.featuredImage}
           alt="Featured"
-          className="rounded-lg shadow-md mb-8"
+          className="rounded-lg shadow-md mb-8 mx-auto"
         />
         <Mdx code={doc.body.code} />
 
