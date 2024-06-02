@@ -2,9 +2,9 @@
 
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/button";
-import { sendMessageToDiscordWebhook } from "@/lib/discord";
 import { RedirectToSignIn, SignedOut } from "@clerk/nextjs";
 import { User } from "@clerk/nextjs/server";
+import axios from "axios";
 import { useState } from "react";
 import { useQuery } from "react-query";
 
@@ -18,13 +18,17 @@ const fetchUser = async () => {
 
 const Contact = () => {
   const { data: user, isLoading, isError } = useQuery<User>("user", fetchUser);
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    sendMessageToDiscordWebhook(message, name, user?.imageUrl || '', email);
+    axios.post("/api/contact", {
+      message: message,
+      username: user?.username,
+      avatarUrl: user?.imageUrl,
+      email: email,
+    });
   };
 
   return (
@@ -40,21 +44,6 @@ const Contact = () => {
         <h2 className="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-sky-500 via-purple-400 to-purple-600 text-transparent bg-clip-text">
           Contact Us
         </h2>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="name"
-          >
-            Name
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"

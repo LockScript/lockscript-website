@@ -24,7 +24,7 @@ const Page = () => {
       <SignedOut>
         <RedirectToSignIn />
       </SignedOut>
-      
+
       <BackgroundBeams />
       <CardContainer className="inter-var mt-10">
         <BackgroundBeams />
