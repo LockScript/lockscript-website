@@ -21,7 +21,7 @@ const people = [
 
 const AboutUsPage = () => {
   return (
-    <div className="w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md min-h-screen">
+    <div className="w-full bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
       <h1 className="md:text-7xl text-6xl lg:text-9xl font-bold text-center text-white relative z-20 mt-40">
         About Us
       </h1>
