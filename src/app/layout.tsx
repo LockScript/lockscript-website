@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "LockScript",
   description:
     "LockScript is a Canadian based cybersecurity / privacy company with the focus of providing secure and private solutions for individuals and businesses.",
+    keywords: ["security", "lockscript", "privacy", "password", "manager", "osint", "saas", "lock", "script", "online", "data"]
 };
 
 export default function RootLayout({
