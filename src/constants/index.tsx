@@ -75,15 +75,15 @@ export const products = [
     text: "LockScript Automate",
     description:
       "LockScript Automate is a task automation tool, allowing you to automate tasks such as sending Slack messages, managing Google Drive files, and more with ease.",
-    href: "/automate"
+    href: "/automate",
   },
   {
     icon: <Shield />,
     text: "LockScript VPN",
     description:
       "LockScript VPN is part of our comprehensive suite of security solutions, providing a secure and encrypted connection for your online activities. The product is upcoming and will be released soon.",
-    href: "/vpn"
-  }
+    href: "/vpn",
+  },
 ];
 
 export const pricingOptions = [
@@ -144,25 +144,24 @@ export const checklistItems = [
 ];
 
 export const resourcesLinks = [
-  { href: "#", text: "Getting Started" },
-  { href: "#", text: "Documentation" },
-  { href: "#", text: "Tutorials" },
-  { href: "#", text: "API Reference" },
-  { href: "#", text: "Community Forums" },
+  { href: "https://github.com/LockScript", text: "Github" },
+  { href: "https://www.cvs0.xyz", text: "cvs0.xyz" },
+  { href: "https://www.5skn.xyz", text: "5skn.xyz" },
+  { href: "https://www.x.com", text: "X" },
+  { href: "/jobs", text: "Jobs" },
 ];
 
 export const platformLinks = [
-  { href: "#", text: "Features" },
-  { href: "#", text: "Supported Devices" },
-  { href: "#", text: "System Requirements" },
-  { href: "#", text: "Downloads" },
-  { href: "#", text: "Release Notes" },
+  { href: "/privacy", text: "Privacy Policy" },
+  { href: "/governance", text: "Governance" },
+  { href: "/security-concerns", text: "Security Concerns" },
+  { href: "/bugs", text: "Bug Reporting" },
+  { href: "/features", text: "Feature Requests" },
 ];
 
 export const communityLinks = [
-  { href: "#", text: "Events" },
-  { href: "#", text: "Meetups" },
-  { href: "#", text: "Conferences" },
-  { href: "#", text: "Hackathons" },
-  { href: "/jobs", text: "Jobs" },
+  { href: "/events", text: "Events" },
+  { href: "/blog", text: "Blog" },
+  { href: "/hackathons", text: "Hackathons" },
+  { href: "https://discord.gg/Jq6AdmXQvM", text: "Discord" },
 ];
