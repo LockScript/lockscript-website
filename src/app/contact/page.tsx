@@ -6,7 +6,7 @@ import { RedirectToSignIn, SignedOut } from "@clerk/nextjs";
 import { User } from "@clerk/nextjs/server";
 import axios from "axios";
 import { useState } from "react";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
 const fetchUser = async () => {
   const res = await fetch("/api/user");
@@ -21,9 +21,26 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const mutation = useMutation(
+    (newMessage: {
+      message: string;
+      username: string | undefined | null;
+      avatarUrl: string | undefined;
+      email: string;
+    }) => {
+      return axios.post("/api/contact", newMessage);
+    },
+    {
+      onSuccess: () => {
+        setEmail("");
+        setMessage("");
+      },
+    }
+  );
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios.post("/api/contact", {
+    mutation.mutate({
       message: message,
       username: user?.username,
       avatarUrl: user?.imageUrl,
@@ -57,6 +74,7 @@ const Contact = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="mb-6">
@@ -71,10 +89,11 @@ const Contact = () => {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            required
           />
         </div>
         <div className="flex items-center justify-between">
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full" disabled={mutation.isLoading}>
             Send
           </Button>
         </div>
