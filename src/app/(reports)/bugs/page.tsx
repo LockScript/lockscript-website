@@ -64,7 +64,6 @@ const Page = () => {
         if (response.ok) {
           const data = await response.json();
           setRecentIssues(data);
-          console.log(data);
         } else {
           throw new Error("Failed to fetch recent issues");
         }
