@@ -8,6 +8,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 const inter = Poppins({ subsets: ["latin"], weight: "400" });
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "LockScript",
@@ -65,6 +66,7 @@ export default function RootLayout({
         <html lang="en">
           <body className={inter.className}>
             <Analytics />
+            <SpeedInsights />
             <div className="relative w-full">
               <FloatingNav navItems={navItems} />
             </div>
