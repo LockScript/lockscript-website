@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.lockscript.dev'),
   title: "LockScript",
   description:
     "LockScript is a Canadian based cybersecurity / privacy company with the focus of providing secure and private solutions for individuals and businesses.",
