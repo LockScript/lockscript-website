@@ -2,13 +2,13 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { QueryProvider } from "@/providers/QueryClient";
 import { ClerkProvider } from "@clerk/nextjs";
 import { IconHome, IconMessage } from "@tabler/icons-react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Info, UserIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 const inter = Poppins({ subsets: ["latin"], weight: "400" });
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lockscript.dev'),

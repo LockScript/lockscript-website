@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { allDocs } from "contentlayer/generated";
-import { notFound } from "next/navigation";
 import { Mdx } from "@/components/ui/mdx";
+import ShareButtons from "@/components/ui/share-buttons";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { allDocs } from "contentlayer/generated";
 import { Verified } from "lucide-react";
-import ShareButtons from "@/components/ui/share-buttons";
+import { notFound } from "next/navigation";
+import { FC } from "react";
 
 interface PageProps {
   params: {

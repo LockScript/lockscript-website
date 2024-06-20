@@ -8,7 +8,6 @@ import Pricing from "@/components/ui/pricing";
 import ProductsSection from "@/components/ui/products-section";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import Workflow from "@/components/ui/workflow";
-import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default function Home() {

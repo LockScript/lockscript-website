@@ -1,17 +1,12 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/U2jQnV14CMM
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
-import Link from "next/link";
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
 } from "@/components/ui/card";
 import Footer from "@/components/ui/footer";
+import Link from "next/link";
 
 export default function Page() {
   const jobs = [
