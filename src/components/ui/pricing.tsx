@@ -1,7 +1,28 @@
-import { pricingOptions } from "@/constants";
-import { CheckCircle2 } from "lucide-react";
+"use client"
 
-const Pricing = () => {
+import { pricingOptions } from "@/constants";
+import { cn } from "@/lib/utils";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+
+async function fetchUser() {
+  const response = await fetch('/api/user');
+  if (response.ok) {
+    return await response.json();
+  }
+  return null;
+}
+
+export default function Pricing() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchUser().then(setUser);
+  }, []);
+
+  console.log(user)
+
   return (
     <div className="mt-20">
       <div className="text-center">
@@ -15,7 +36,7 @@ const Pricing = () => {
       <div className="flex flex-wrap">
         {pricingOptions.map((option, index) => (
           <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2">
-            <div className="p-10 border border-neutral-700 rounded-xl">
+            <div className={cn("p-10 border rounded-xl", ((option.title == "Free" && user !== null) ? 'border-white' : "border-neutral-700"))}>
               <p className="text-4xl mb-8 text-white">
                 {option.title}
                 {option.title === "Pro" && (
@@ -36,12 +57,27 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
-                className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-accent hover:text-black border border-white rounded-lg transition duration-200 text-white"
-              >
-                Subscribe
-              </a>
+
+              <SignedIn>
+                <a
+                  href={option.title === "Free" ? "#" : "/subscribe"}
+                  className={cn("inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl border border-white rounded-lg transition duration-200",
+                    option.title === "Free" ? "bg-neutral-500 text-neutral-400 cursor-not-allowed" : "hover:bg-accent hover:text-black text-white"
+                  )}
+                >
+                  {option.title === "Free" ? "Subscribed" : "Subscribe"}
+                </a>
+              </SignedIn>
+
+
+              <SignedOut>
+                <a
+                  href="/sign-in"
+                  className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-accent hover:text-black border border-white rounded-lg transition duration-200 text-white"
+                >
+                  Sign in
+                </a>
+              </SignedOut>
             </div>
           </div>
         ))}
@@ -49,5 +85,3 @@ const Pricing = () => {
     </div>
   );
 };
-
-export default Pricing;
