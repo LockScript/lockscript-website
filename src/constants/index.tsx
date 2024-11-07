@@ -1,20 +1,15 @@
-import { IconDashboard, IconUserOff } from "@tabler/icons-react";
+import {IconDashboard} from "@tabler/icons-react";
 import {
-  BotMessageSquare,
-  Fingerprint,
-  ShieldHalf,
   BatteryCharging,
-  PlugZap,
-  GlobeLock,
+  Fingerprint,
+  Glasses,
   Key,
   Lock,
-  Glasses,
-  Vault,
-  VenetianMask,
   Settings,
   Shield,
+  Vault,
+  VenetianMask
 } from "lucide-react";
-import { FaMask } from "react-icons/fa";
 
 export const features = [
   {

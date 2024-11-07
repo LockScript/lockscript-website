@@ -16,6 +16,7 @@ import {
 } from "@clerk/nextjs";
 import { currentUser, getAuth, redirectToSignIn } from "@clerk/nextjs/server";
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "./mode-toggle";
 
 export const FloatingNav = ({
   navItems,
@@ -49,7 +50,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-transparent backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-neutral-200 dark:border-neutral-700 rounded-full bg-white dark:bg-neutral-900 backdrop-filter backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
           className
         )}
       >
@@ -60,7 +61,7 @@ export const FloatingNav = ({
                 <Link
                   href={navItem.link}
                   className={cn(
-                    "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+                    "relative text-neutral-900 dark:text-neutral-50 items-center flex space-x-1 hover:text-neutral-700 dark:hover:text-neutral-300"
                   )}
                 >
                   <span className="block sm:hidden">{navItem.icon}</span>
@@ -76,7 +77,7 @@ export const FloatingNav = ({
                 key={`navItem-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+                  "relative text-neutral-900 dark:text-neutral-50 items-center flex space-x-1 hover:text-neutral-700 dark:hover:text-neutral-300"
                 )}
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
@@ -85,20 +86,21 @@ export const FloatingNav = ({
             );
           }
         })}
-        
+
         <SignedIn>
           <UserButton />
         </SignedIn>
 
         <SignedOut>
           <button
-            className="border text-sm font-medium relative border-white/[0.2] text-white px-4 py-2 rounded-full"
+            className="border text-sm font-medium relative border-neutral-400 dark:border-neutral-700 text-neutral-900 dark:text-white px-4 py-2 rounded-full"
             onClick={() => router.push("/sign-in")}
           >
             <span>Login</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-800 dark:via-blue-500 to-transparent h-px" />
           </button>
         </SignedOut>
+        <ModeToggle />
       </motion.div>
     </AnimatePresence>
   );
